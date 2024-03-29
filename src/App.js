@@ -1,3 +1,4 @@
+import Button from '@mui/material/Button';
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
@@ -11,27 +12,15 @@ const user = {
 user.name = 'Alex';
 let _if_spining = false;
 
-function MyButton() {
-    const [count, setCount] = useState(0); //useState是一个hook，用于在函数组件中添加state状态，返回一个数组，第一个元素是状态值，第二个元素是更新状态的函数
-    console.log('实例更新');
-
-    function handleClick() {
-        if (!_if_spining) {
-            _if_spining = true;
-            document.getElementById('me').style.animation = 'App-logo-spin 0.5s';
-            setTimeout(() => {
-                document.getElementById('me').style.animation = 'none';
-                _if_spining = false;
-            }, 500);
-        }
-        setCount(count + 1);
+function handleClick() {
+    if (!_if_spining) {
+        _if_spining = true;
+        document.getElementById('me').style.animation = 'App-logo-spin 0.5s';
+        setTimeout(() => {
+            document.getElementById('me').style.animation = 'none';
+            _if_spining = false;
+        }, 500);
     }
-
-    return (
-        <button onClick={handleClick}>
-            Clicked {count} times
-        </button>
-    );
 }
 
 function App() { //这就是一个组件，组件在JS中被定义为一个函数，函数的名称就是组件的名称
@@ -51,20 +40,15 @@ function App() { //这就是一个组件，组件在JS中被定义为一个函�
                         className="My-logo"
                         alt="logo"
                     />
-                    <p>My name is <spl style={{color: 'red'}}>{user.name}{isOnline ? (
-                            <spl style={{color: 'green', fontSize: '100px'}}>·</spl>) :
-                        (<spl style={{color: 'grey', fontSize: '100px'}}>·</spl>)}
-                    </spl></p>
+                    <p>My name is <span style={{color: 'red'}}>{user.name} {isOnline ? (
+                            <span style={{color: 'lightgreen', fontSize: '20px'}}>在线</span>) :
+                        (<span style={{color: 'grey', fontSize: '20px'}}>离线</span>)}
+                    </span></p>
+                    <Button variant="contained" style={{backgroundColor: 'aqua', color: 'black', width: '10vw'}}
+                            onClick={handleClick}>You
+                        Click</Button>
                 </div>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <MyButton/>
+
                 {/*<ul>*/}
                 {/*    {list.map((item) => (*/}
                 {/*        <div>*/}

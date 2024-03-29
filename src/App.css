@@ -6,6 +6,7 @@
     width: 40%;
     pointer-events: none;
     border-radius: 50%;
+
 }
 
 .App-logo {
@@ -19,7 +20,7 @@
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px 0;
     width: fit-content;
 }
 

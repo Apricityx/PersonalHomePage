@@ -1,0 +1,57 @@
+/*主体*/
+#Main {
+    position: fixed;
+    width: 100%;
+    transition: 1s;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+/*进入按钮*/
+#enter_button {
+    transition: 0.5s;
+}
+
+/*旋转动画*/
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#My-logo {
+    box-shadow: black 0 0 20px;
+    height: inherit;
+    border-radius: 50%;
+}
+
+/*个人头像*/
+#My-logo-container {
+    position: absolute;
+    top: 0.5vh;
+    height: 7vh;
+    width: 7vh;
+    /*居左*/
+    transition: 0.5s;
+}
+
+#My-logo-container:hover {
+}
+
+@keyframes logo_move {
+    100% {
+        margin-right: 95vw;
+    }
+}
