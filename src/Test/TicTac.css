@@ -1,0 +1,32 @@
+#TicTac_Main{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #4b383e;
+    /*min-height: 50vh;*/
+    /*right: 0;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+.board-row{
+    display: flex;
+    width: 300px;
+    height: 100px;
+}
+.square{
+    justify-content: center;
+    align-items: center;
+    width: 99px;
+    height: 99px;
+    background-color: #282c34;
+    color: white;
+    display: inline-flex;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: 0.5s;
+}
+.square:hover{
+    transition: 0.5s;
+    filter: brightness(1.5);
+}

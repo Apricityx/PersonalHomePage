@@ -6,7 +6,7 @@ import {Alert, getFabUtilityClass} from "@mui/material";
 function move_to_top() {
     console.log('move_to_top');
     let enter_button = document.getElementById('enter_button');
-    let container = document.getElementById('Main');
+    let container = document.getElementById('Navigation_Main');
     let React_logo = document.getElementById('React-logo');
     let My_logo = document.getElementById('My-logo-container');
     container.style.minHeight = '1vh';
@@ -43,18 +43,7 @@ function move_to_top() {
 function Navigation() { //这就是一个组件，组件在JS中被定义为一个函数，函数的名称就是组件的名称
     return (
 
-        <div id="Main"> {/*在React中，我们用className来替代HTML中的class，此外，此处相当于向CSS传递信息“APP”*/}
-            <Alert
-                severity="warning"
-                action={
-                    <Button color="inherit" size="small">
-                        I Know
-                    </Button>
-                }
-                id={'alert'}
-            >
-                This website is under construction!
-            </Alert>
+        <div id="Navigation_Main"> {/*在React中，我们用className来替代HTML中的class，此外，此处相当于向CSS传递信息“APP”*/}
             <div id={"My-logo-container"}>
                 <img id={'My-logo'}
                      src={'https://img2.imgtp.com/2024/03/25/J6atPQfB.jpg'}
