@@ -46,7 +46,7 @@
     height: 7vh;
     width: 7vh;
     /*居左*/
-    transition: 0.5s;
+    transition: 0.5s, margin-right 1s ease-in-out;
 }
 
 #My-logo-container:hover {
@@ -56,4 +56,25 @@
     100% {
         margin-right: 95vw;
     }
+}
+
+
+#detailed_information {
+    width: fit-content;
+    height: fit-content;
+    z-index: 99;
+    font-size: 2vh;
+    text-align: center;
+    padding-top: 0;
+    border-radius: 10px;
+    /*旋转120度*/
+    transform: rotate(10deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+#My-logo-container:hover #detailed_information {
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    opacity: 1;
 }

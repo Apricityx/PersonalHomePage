@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navigation';
+import CardContainer from "./Card/CardContainer";
 import NotifyBar from "./NotifyBar";
 import TicTac from "./Test/TicTac";
 import {DevSupport} from "@react-buddy/ide-toolbox";
@@ -22,7 +23,7 @@ root.render(
         {/*    <TicTac/>*/}
         {/*</DevSupport>*/}
         {/*<hr style={{marginTop: "8vh"}}/>*/}
-        <p style={{color: "red"}}>HELLO WORLD</p>
+        <CardContainer/>
     </React.StrictMode>
 );
 

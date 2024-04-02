@@ -1,13 +1,24 @@
 import Button from '@mui/material/Button';
 import logo from './logo.svg';
 import './Navigation.css';
-import {Alert, getFabUtilityClass} from "@mui/material";
-window.onkeydown = function (event) {
-    if (event.keyCode === 13) {
-        move_to_top();
+import {Alert, getFabUtilityClass, ListItemButton} from "@mui/material";
+import UserInformation from "./UserInformation";
+
+let is_top = false;
+window.addEventListener('scroll', function () {
+    move_to_top()
+})
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        move_to_top()
     }
-}
+})
+
 function move_to_top() {
+    if (is_top) {
+        return;
+    }
+    is_top = true;
     console.log('move_to_top');
     let enter_button = document.getElementById('enter_button');
     let container = document.getElementById('Navigation_Main');
@@ -19,27 +30,25 @@ function move_to_top() {
     //异步执行
     async function move() {
         setTimeout(() => {
-            My_logo.style.marginRight = '95vw';
             My_logo.addEventListener("mouseover", function () {
                 My_logo.style.animation = 'none';
                 My_logo.style.height = '8vh';
                 My_logo.style.width = '8vh';
-                My_logo.style.marginRight = '95vw';
-                detailed_information.style.display = 'block';
+                My_logo.style.marginRight = '92vw';
             });
             My_logo.addEventListener("mouseout", function () {
                 My_logo.style.height = '5vh';
                 My_logo.style.width = '5vh';
-                My_logo.style.marginRight = '95vw';
-                detailed_information.style.display = 'none';
+                My_logo.style.marginRight = '92vw';
             })
-            My_logo.style.animation = 'none';
+            // My_logo.style.animation = 'none';
         }, 1000)
     }
 
     My_logo.style.height = '5vh';
     My_logo.style.width = '5vh';
-    My_logo.style.animation = 'logo_move 1s';
+    My_logo.style.marginRight = '92vw';
+    // My_logo.style.animation = 'logo_move 1s';
     move();
     enter_button.innerText = '';
     enter_button.style.height = '0';
@@ -53,15 +62,12 @@ function Navigation() { //这就是一个组件，组件在JS中被定义为一�
         <div id="Navigation_Main"> {/*在React中，我们用className来替代HTML中的class，此外，此处相当于向CSS传递信息“APP”*/}
             <div id={"My-logo-container"}>
                 <img id={'My-logo'}
+                     style={{zIndex:999,float:'right'}}
                      src={'https://img2.imgtp.com/2024/03/25/J6atPQfB.jpg'}
                      alt="logo"
                 />
-                <div id="detailed_information" style={{display:"none"}}>
-                    <Alert severity="info" style={{backgroundColor: 'aqua', color: 'black'}}>
-                        <h2>My Name</h2>
-                        <h3>My Email</h3>
-                        <h4>My Phone</h4>
-                    </Alert>
+                <div id="detailed_information">
+                    <UserInformation/>
                 </div>
             </div>
             <img style={{transition: '1s', height: '40vh', animation: 'App-logo-spin 2s infinite'}}

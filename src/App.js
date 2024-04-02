@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import logo from './logo.svg';
+import logo from './Navigation/logo.svg';
 import './App.css';
 import {useState} from 'react';
 
