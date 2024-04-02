@@ -1,5 +1,6 @@
 /*主体*/
 #Navigation_Main {
+    top: 0;
     position: fixed;
     width: 100%;
     transition: 1s;
@@ -11,6 +12,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    Z-index: 999;
 }
 
 /*进入按钮*/
