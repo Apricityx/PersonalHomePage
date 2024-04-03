@@ -34,9 +34,12 @@
 }
 
 #My-logo {
+    float: right;
     box-shadow: black 0 0 20px;
     height: inherit;
     border-radius: 50%;
+    z-index: 9999;
+    position: absolute;
 }
 
 /*个人头像*/
@@ -58,23 +61,23 @@
     }
 }
 
-
-#detailed_information {
+/*悬浮在logo上的详情信息hover*/
+#UserInformation {
+    opacity: 0;
     width: fit-content;
-    height: fit-content;
+    height: 0;
+    overflow: hidden;
     z-index: 99;
     font-size: 2vh;
     text-align: center;
-    padding-top: 0;
     border-radius: 10px;
     /*旋转120度*/
-    transform: rotate(10deg);
+    transform: rotate(3deg);
     transition: 0.5s;
-    opacity: 0;
 }
 
-#My-logo-container:hover #detailed_information {
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
-    opacity: 1;
-}
+/*#My-logo-container:hover #detailed_information {*/
+/*    transform: rotate(0deg);*/
+/*    transition: 0.5s ease-in-out;*/
+/*    opacity: 1;*/
+/*}*/

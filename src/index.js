@@ -23,7 +23,6 @@ root.render(
         {/*    <TicTac/>*/}
         {/*</DevSupport>*/}
         {/*<hr style={{marginTop: "8vh"}}/>*/}
-        <CardContainer/>
     </React.StrictMode>
 );
 

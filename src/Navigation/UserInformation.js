@@ -1,14 +1,16 @@
 import React from 'react';
+import CardContainer from "../Card/CardContainer";
 //定义样式
 const styles = {
-
-
     container: {
-        height: '10vh',
-        width: '10vw',
-        padding: '0',
-        backgroundColor: 'black',
+        height: '20vh',
+        width: '30vw',
+        paddingTop: '',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
         zIndex: 9,
+        position: 'relative',
     },
     logo: {
         height: '40vmin',
@@ -18,9 +20,11 @@ const styles = {
         color: 'white',
     },
 };
+
 function UserInformation() { //这就是一个组件，组件在JS中被定义为一个函数，函数的名称就是组件的名称
     return (
-        <div style={styles.container}>
+        <div style={styles.container} id="UserInformation">
+            <CardContainer/>
             <p>WIP</p>
         </div>
     )

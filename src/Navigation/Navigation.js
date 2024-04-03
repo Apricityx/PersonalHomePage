@@ -24,22 +24,32 @@ function move_to_top() {
     let container = document.getElementById('Navigation_Main');
     let React_logo = document.getElementById('React-logo');
     let My_logo = document.getElementById('My-logo-container');
-    let detailed_information = document.getElementById('detailed_information');
+    let detailed_information = document.getElementById('UserInformation');
     container.style.minHeight = '1vh';
 
     //异步执行
     async function move() {
         setTimeout(() => {
             My_logo.addEventListener("mouseover", function () {
+                container.style.backgroundColor = 'white';
                 My_logo.style.animation = 'none';
                 My_logo.style.height = '8vh';
                 My_logo.style.width = '8vh';
                 My_logo.style.marginRight = '92vw';
+                detailed_information.style.height = "50vh"; //此处高度应与组件高度对齐
+                detailed_information.style.transform = 'rotate(0)';
+                detailed_information.style.opacity = "1";
+                // detailed_information.style.padding = '5vh';
             });
-            My_logo.addEventListener("mouseout", function () {
+            My_logo.addEventListener("mouseleave", function () {
+                container.style.backgroundColor = '#282c34';
                 My_logo.style.height = '5vh';
                 My_logo.style.width = '5vh';
                 My_logo.style.marginRight = '92vw';
+                detailed_information.style.height = "0"
+                detailed_information.style.transform = 'rotate(3deg)';
+                detailed_information.style.opacity = "0";
+                // detailed_information.style.padding = '0';
             })
             // My_logo.style.animation = 'none';
         }, 1000)
@@ -62,13 +72,10 @@ function Navigation() { //这就是一个组件，组件在JS中被定义为一�
         <div id="Navigation_Main"> {/*在React中，我们用className来替代HTML中的class，此外，此处相当于向CSS传递信息“APP”*/}
             <div id={"My-logo-container"}>
                 <img id={'My-logo'}
-                     style={{zIndex:999,float:'right'}}
                      src={'https://img2.imgtp.com/2024/03/25/J6atPQfB.jpg'}
                      alt="logo"
                 />
-                <div id="detailed_information">
-                    <UserInformation/>
-                </div>
+                <UserInformation/>
             </div>
             <img style={{transition: '1s', height: '40vh', animation: 'App-logo-spin 2s infinite'}}
                  id='React-logo'
