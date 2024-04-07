@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import logo from './logo.svg';
 import './Navigation.css';
-import {Alert, getFabUtilityClass, ListItemButton} from "@mui/material";
+import {Alert, getFabUtilityClass, ListItemButton, Tooltip} from "@mui/material";
 import UserInformation from "./UserInformation";
 
 let is_top = false;
@@ -25,41 +25,55 @@ function move_to_top() {
     let React_logo = document.getElementById('React-logo');
     let My_logo = document.getElementById('My-logo-container');
     let detailed_information = document.getElementById('UserInformation');
+    let body = document.getElementsByTagName('body')[0];
+    let body_part = document.getElementById('body_part');
     container.style.minHeight = '1vh';
 
     //异步执行
     async function move() {
         setTimeout(() => {
             My_logo.addEventListener("mouseover", function () {
+                body.style.backgroundColor = 'black';
+                body_part.style.backgroundColor = 'black';
                 container.style.backgroundColor = 'white';
                 My_logo.style.animation = 'none';
                 My_logo.style.height = '8vh';
                 My_logo.style.width = '8vh';
-                My_logo.style.marginRight = '92vw';
+                // My_logo.style.marginLeft = '7vw';
+                // My_logo.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
                 detailed_information.style.height = "50vh"; //此处高度应与组件高度对齐
-                detailed_information.style.transform = 'rotate(0)';
                 detailed_information.style.opacity = "1";
+                React_logo.style.filter = 'invert(0.8)';
                 // detailed_information.style.padding = '5vh';
             });
             My_logo.addEventListener("mouseleave", function () {
+                body.style.backgroundColor = '#282c34';
+                body_part.style.backgroundColor = '#282c34';
                 container.style.backgroundColor = '#282c34';
                 My_logo.style.height = '5vh';
                 My_logo.style.width = '5vh';
-                My_logo.style.marginRight = '92vw';
                 detailed_information.style.height = "0"
-                detailed_information.style.transform = 'rotate(3deg)';
                 detailed_information.style.opacity = "0";
+                React_logo.style.filter = '';
                 // detailed_information.style.padding = '0';
             })
-            // My_logo.style.animation = 'none';
+            container.style.transition = 'none';
+            container.style.backgroundColor = 'rgba(40,44,52,0.5)';
+            container.style.transition = '1s';
+
+            //下面是移动完成后需要实现的语句
+            My_logo.style.animation = 'none';
         }, 1000)
     }
 
+    document.getElementsByTagName('body')[0].style.transition = '1s';
     My_logo.style.height = '5vh';
     My_logo.style.width = '5vh';
     My_logo.style.marginRight = '92vw';
     // My_logo.style.animation = 'logo_move 1s';
-    move();
+    move().then(r => {
+        console.log('moving event done');
+    })
     enter_button.innerText = '';
     enter_button.style.height = '0';
     enter_button.style.width = '0';

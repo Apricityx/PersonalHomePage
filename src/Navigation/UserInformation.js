@@ -1,13 +1,13 @@
 import React from 'react';
-import CardContainer from "../Card/CardContainer";
+import CardContainer from "./Card/CardContainer";
 //定义样式
 const styles = {
     container: {
-        height: '20vh',
-        width: '30vw',
+        height: '0',
+        width: '50vh',
         paddingTop: '',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        backdropFilter: 'blur(10px)',
+        backdropFilter: 'blur(2px)',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
         zIndex: 9,
         position: 'relative',
@@ -25,7 +25,6 @@ function UserInformation() { //这就是一个组件，组件在JS中被定义�
     return (
         <div style={styles.container} id="UserInformation">
             <CardContainer/>
-            <p>WIP</p>
         </div>
     )
 }

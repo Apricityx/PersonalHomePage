@@ -17,6 +17,7 @@
     "@react-buddy/ide-toolbox": "^2.4.0",
     "@react-buddy/palette-mui": "^5.0.1"
   },
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
