@@ -1,0 +1,9 @@
+.tech_icon {
+    transition: 200ms;
+    width: 0;
+    height: 0;
+}
+#tech_icon_container{
+    width: 100%;
+    height: fit-content;
+}

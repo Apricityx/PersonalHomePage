@@ -12,7 +12,8 @@ function Poem() { //这就是一个组件，组件在JS中被定义为一个函�
     return (
         <div style={{
             borderRadius: "10px",
-            border: "1px solid",
+            // border: "1px solid",
+            marginLeft: '2vw',
             boxShadow: '10px',
             fontWeight: "bold",
             fontFamily: "revert-layer",

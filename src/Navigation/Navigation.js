@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import logo from './logo.svg';
 import './Navigation.css';
+import {loadTechIcons} from "../BodyCards/TechListCard";
 import {Alert, getFabUtilityClass, ListItemButton, Tooltip} from "@mui/material";
 import UserInformation from "./UserInformation";
 
@@ -62,6 +63,7 @@ function move_to_top() {
             container.style.transition = '1s';
             //下面是移动完成后需要实现的语句
             My_logo.style.animation = 'none';
+            loadTechIcons()
         }, 1000)
     }
 
