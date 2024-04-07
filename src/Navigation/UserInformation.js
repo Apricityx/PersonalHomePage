@@ -7,7 +7,7 @@ const styles = {
         width: '50vh',
         paddingTop: '',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        backdropFilter: 'blur(2px)',
+        backdropFilter: 'blur(10px)',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
         zIndex: 9,
         position: 'relative',

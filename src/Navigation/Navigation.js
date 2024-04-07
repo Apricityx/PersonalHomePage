@@ -49,7 +49,7 @@ function move_to_top() {
             My_logo.addEventListener("mouseleave", function () {
                 body.style.backgroundColor = '#282c34';
                 body_part.style.backgroundColor = '#282c34';
-                container.style.backgroundColor = '#282c34';
+                container.style.backgroundColor = 'rgba(40,44,52,0.5)';
                 My_logo.style.height = '5vh';
                 My_logo.style.width = '5vh';
                 detailed_information.style.height = "0"
@@ -60,7 +60,6 @@ function move_to_top() {
             container.style.transition = 'none';
             container.style.backgroundColor = 'rgba(40,44,52,0.5)';
             container.style.transition = '1s';
-
             //下面是移动完成后需要实现的语句
             My_logo.style.animation = 'none';
         }, 1000)

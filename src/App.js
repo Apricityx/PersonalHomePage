@@ -40,10 +40,10 @@ function App() { //这就是一个组件，组件在JS中被定义为一个函�
                         className="My-logo"
                         alt="logo"
                     />
-                    <p>My name is <span style={{color: 'red'}}>{user.name} {isOnline ? (
+                    <span>My name is <span style={{color: 'red'}}>{user.name} {isOnline ? (
                             <span style={{color: 'lightgreen', fontSize: '20px'}}>在线</span>) :
                         (<span style={{color: 'grey', fontSize: '20px'}}>离线</span>)}
-                    </span></p>
+                    </span></span>
                     <Button variant="contained" style={{backgroundColor: 'aqua', color: 'black', width: '10vw'}}
                             onClick={handleClick}>You
                         Click</Button>
