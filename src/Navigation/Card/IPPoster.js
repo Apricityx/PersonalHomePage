@@ -1,6 +1,6 @@
 let url = "pve.zwtsvx.xyz"
 let port = "1126"
-let request_url = "http://" + url + ":" + port + '/';
+let request_url = "https://" + url + ":" + port + '/';
 
 export function update_online(text_container) {
     console.log("update");
