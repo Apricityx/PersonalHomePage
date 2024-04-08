@@ -25,7 +25,7 @@ jobs:
       - run: CI=false npm run build
       - name: Rename and commit
         run: |
-          find ./ -mindepth 1 -maxdepth 1 ! -name 'build' ! -name '.git' -exec rm -rf {} \;
+          find ./ -mindepth 1 -maxdepth 1 ! -name 'CNAME' ! -name 'build' ! -name '.git' -exec rm -rf {} \;
           mv build/* ./
           rm -rf build
           git config --local user.email "apricityx@qq.com"
