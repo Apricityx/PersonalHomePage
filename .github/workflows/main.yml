@@ -1,0 +1,40 @@
+name: Web Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: Set process.env.CI to false
+        run: echo "process.env.CI=false" >> $GITHUB_ENV
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: CI=false npm run build
+      - name: Rename and commit
+        run: |
+          find ./ -mindepth 1 -maxdepth 1 ! -name 'build' ! -name '.git' -exec rm -rf {} \;
+          mv build/* ./
+          rm -rf build
+          git config --local user.email "apricityx@qq.com"
+          git config --local user.name "Apricityx"
+          git checkout -b web
+          git add *
+          git commit -m "Rename public to docs"
+      - name: Push to web
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          git push origin web --force
