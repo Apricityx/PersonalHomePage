@@ -4,15 +4,12 @@ import './index.css';
 import App from './App';
 import Navigation from './Navigation/Navigation';
 import CardContainer from "./Navigation/Card/CardContainer";
-import NotifyBar from "./NotifyBar";
-import TicTac from "./Test/TicTac";
 import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "./dev";
 import {colors} from "@mui/material";
 import BodyPart from "./BodyPart";
 // import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
         {/*<App/>*/}

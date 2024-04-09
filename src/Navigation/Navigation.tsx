@@ -4,6 +4,7 @@ import './Navigation.css';
 import {loadTechIcons} from "../BodyCards/TechListCard";
 import {Alert, getFabUtilityClass, ListItemButton, Tooltip} from "@mui/material";
 import UserInformation from "./UserInformation";
+import React from 'react';
 
 let is_top = false;
 window.addEventListener('scroll', function () {
@@ -21,21 +22,21 @@ function move_to_top() {
     }
     is_top = true;
     console.log('move_to_top');
-    let enter_button = document.getElementById('enter_button');
-    let container = document.getElementById('Navigation_Main');
-    let React_logo = document.getElementById('React-logo');
-    let My_logo = document.getElementById('My-logo-container');
-    let detailed_information = document.getElementById('UserInformation');
-    let body = document.getElementsByTagName('body')[0];
-    let body_part = document.getElementById('body_part');
+    let enter_button = document.getElementById('enter_button') as HTMLElement;
+    let container = document.getElementById('Navigation_Main') as HTMLElement;
+    let React_logo = document.getElementById('React-logo') as HTMLElement;
+    let My_logo = document.getElementById('My-logo-container') as HTMLElement;
+    let detailed_information = document.getElementById('UserInformation') as HTMLElement;
+    let body = document.getElementsByTagName('body')[0] as HTMLElement;
+    let body_part = document.getElementById('body_part')as HTMLElement;
     container.style.minHeight = '1vh';
 
     //异步执行
     async function move() {
         setTimeout(() => {
             My_logo.addEventListener("mouseover", function () {
-                body.style.backgroundColor = 'black';
-                body_part.style.backgroundColor = 'black';
+                body.style.backgroundColor = 'darkgrey';
+                body_part.style.backgroundColor = 'darkgrey';
                 container.style.backgroundColor = 'white';
                 My_logo.style.animation = 'none';
                 My_logo.style.height = '8vh';

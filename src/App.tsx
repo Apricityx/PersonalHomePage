@@ -1,7 +1,8 @@
 import Button from '@mui/material/Button';
-import logo from './Navigation/logo.svg';
+import logo from "./logo.svg";
 import './App.css';
 import {useState} from 'react';
+import React from 'react';
 
 const user = {
     name: 'Alex',
@@ -15,9 +16,11 @@ let _if_spining = false;
 function handleClick() {
     if (!_if_spining) {
         _if_spining = true;
-        document.getElementById('me').style.animation = 'App-logo-spin 0.5s';
+        // @ts-ignore
+        document.getElementById('me').style.animation = 'App-logo-spin 0.5s' as HTMLElement;
         setTimeout(() => {
-            document.getElementById('me').style.animation = 'none';
+            // @ts-ignore
+            document.getElementById('me').style.animation = 'none' ;
             _if_spining = false;
         }, 500);
     }

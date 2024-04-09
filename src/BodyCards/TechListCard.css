@@ -7,3 +7,7 @@
     width: 100%;
     height: fit-content;
 }
+
+.tech_icon:hover {
+    transform: scale(2);
+}

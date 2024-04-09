@@ -3,7 +3,7 @@ function Poem() { //这就是一个组件，组件在JS中被定义为一个函�
     const [hitokoto, setHitokoto] = useState('');
     useEffect(() => {
         // 从 API 获取数据
-        fetch('https://pve.zwtsvx.xyz:1126/method.php?method=get_poem')
+        fetch('https://pve.zwtsvx.xyz:1127/method.php?method=get_poem')
             .then((response) => response.text())
             .then((data) => setHitokoto(data))
             .catch((error) => console.error('获取数据时出错:', error));

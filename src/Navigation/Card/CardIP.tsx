@@ -12,7 +12,8 @@ function CardIP() { //这就是一个组件，组件在JS中被定义为一个�
         // if (ip_address) document.getElementById("CardIP_ip").innerHTML = "IP: " + ip_address;
         if (last_ip_address !== ip_address) {
             last_ip_address = ip_address
-            document.getElementById("IP_CONTAINER").innerHTML = ip_address;
+            let ip_container_obj = document.getElementById("IP_CONTAINER") as HTMLElement ;
+            ip_container_obj.innerHTML = ip_address
         }
     }, 2000)
     return (<>
